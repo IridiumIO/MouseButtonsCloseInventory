@@ -37,13 +37,16 @@ public class CloseInventoryWithMouse {
 class CloseInventoryManager {
 
     @SubscribeEvent
-    public static void onKeyInput(InputEvent.MouseInputEvent event){
+    public static void onKeyInput(InputEvent.MouseButton event){
+
 
         LocalPlayer player = Minecraft.getInstance().player;
 
         if (player == null){
             return;
         }
+
+
 
         //1 = keyDown, 0 = keyUp, 2 = keyRepeat
         if(!isInventoryOpen() || event.getAction() != 1){
@@ -57,7 +60,12 @@ class CloseInventoryManager {
 
         int boundKey = inventoryKeybind.getKey().getValue();
 
+        System.out.println("Pressed button: " + event.getButton());
+        System.out.println("Button action : " + event.getAction());
+
+
         if(eventKey == boundKey){
+            event.setCanceled(true);
             player.closeContainer();
         }
 
