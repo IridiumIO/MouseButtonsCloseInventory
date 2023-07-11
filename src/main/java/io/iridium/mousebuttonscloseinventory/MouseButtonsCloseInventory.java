@@ -1,4 +1,4 @@
-package io.iridium.closeinventorywithmouse;
+package io.iridium.mousebuttonscloseinventory;
 
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -13,12 +13,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(CloseInventoryWithMouse.MOD_ID)
-public class CloseInventoryWithMouse {
+@Mod(MouseButtonsCloseInventory.MOD_ID)
+public class MouseButtonsCloseInventory {
 
-    public static final String MOD_ID = "closeinventorywithmouse";
+    public static final String MOD_ID = "mousebuttonscloseinventory";
 
-    public CloseInventoryWithMouse() {
+    public MouseButtonsCloseInventory() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
